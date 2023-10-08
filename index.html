@@ -8,22 +8,23 @@
         body {
             margin: 0;
             overflow: hidden;
+            background-color: #ffffff; /* Sfondo bianco */
+            color: #000000; /* Testo nero */
         }
         .personaggio {
-            width: 30px; /* Larghezza dei personaggi */
-            height: 30px; /* Altezza dei personaggi */
+            width: 30px;
+            height: 30px;
             background-size: cover;
             position: absolute;
             bottom: 0;
         }
         .nickname {
             position: absolute;
-            top: -40px; /* Regola l'altezza del nickname sopra la testa del personaggio */
+            top: -40px;
             left: 0;
             width: 100%;
             text-align: center;
-            font-size: 12px; /* Regola la dimensione del testo del nickname */
-            color: rgb(0, 0, 0); /* Regola il colore del testo del nickname */
+            font-size: 12px;
         }
         .timer {
             position: absolute;
@@ -31,66 +32,44 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 24px;
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            background-color: #000000;
+            font-family: Arial, sans-serif; /* Utilizza il font Arial */
+            color: #000000;
+            background-color: #ffffff;
             padding: 10px 20px;
             border-radius: 5px;
+        }
+        .title {
+            position: absolute;
+            top: 10px; /* Regola l'altezza del titolo sopra al timer */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="personaggio" id="mask1" style="left: 0;">
-        <div class="nickname">Luca Romanelli</div>
-    </div>
-    <div class="personaggio" id="mask2" style="left: 0;">
-        <div class="nickname">Lorenzo Ferrante</div>
-    </div>
-    <div class="personaggio" id="mask3" style="left: 0;">
-        <div class="nickname">Davide Renzi Author</div>
-    </div>
-    <div class="personaggio" id="mask4" style="left: 0;">
-        <div class="nickname">Salvatore Pannozzo Capodiferro</div>
-    </div>
-    <div class="personaggio" id="frog1" style="left: 100%; transform: scaleX(-1);">
-        <div class="nickname">Giuseppe Sansone</div>
-    </div>
-    <div class="personaggio" id="frog2" style="left: 100%; transform: scaleX(-1);">
-        <div class="nickname">Radhouane Chaouadi</div>
-    </div>
-    <div class="personaggio" id="frog3" style="left: 100%; transform: scaleX(-1);">
-        <div class="nickname">Francesco Gramegna</div>
-    </div>
-    <div class="personaggio" id="frog4" style="left: 100%; transform: scaleX(-1);">
-        <div class="nickname">Ekpu Chinwe</div>
-    </div>
-    <div class="personaggio" id="virtual1" style="left: 50%; transform: translateX(-50%);">
-        <div class="nickname">Berbec Beladragos</div>
-    </div>
-    <div class="personaggio" id="virtual2" style="left: 50%; transform: translateX(-50%);">
-        <div class="nickname">Wael Youssfi</div>
-    </div>
-    <div class="personaggio" id="virtual3" style="left: 50%; transform: translateX(-50%);">
-        <div class="nickname">Dmytro Vydysh</div>
-    </div>
-    <div class="personaggio" id="virtual4" style="left: 50%; transform: translateX(-50%);">
-        <div class="nickname">Nicola Bongiovanni</div>
-    </div>
-    <div class="personaggio" id="pink1" style="left: 75%; transform: translateX(-75%);">
-        <div class="nickname">Sospiri di Inquietudine</div>
-    </div>
-    <div class="personaggio" id="pink2" style="left: 75%; transform: translateX(-75%);">
-        <div class="nickname">Angela Croce</div>
-    </div>
-    <div class="personaggio" id="pink3" style="left: 75%; transform: translateX(-75%);">
-        <div class="nickname">Valentina Corvasce</div>
-    </div>
-    <div class="personaggio" id="pink4" style="left: 75%; transform: translateX(-75%);">
-        <div class="nickname">Anastasia Design</div>
-    </div>
+    <div class="title">TechFreelancers Italia</div>
+    <div class="personaggio" id="mask1" style="left: 0;"></div>
+    <div class="personaggio" id="mask2" style="left: 0;"></div>
+    <div class="personaggio" id="mask3" style="left: 0;"></div>
+    <div class="personaggio" id="mask4" style="left: 0;"></div>
+    <div class="personaggio" id="frog1" style="left: 100%; transform: scaleX(-1);"></div>
+    <div class="personaggio" id="frog2" style="left: 100%; transform: scaleX(-1);"></div>
+    <div class="personaggio" id="frog3" style="left: 100%; transform: scaleX(-1);"></div>
+    <div class="personaggio" id="frog4" style="left: 100%; transform: scaleX(-1);"></div>
+    <div class="personaggio" id="virtual1" style="left: 50%; transform: translateX(-50%);"></div>
+    <div class="personaggio" id="virtual2" style="left: 50%; transform: translateX(-50%);"></div>
+    <div class="personaggio" id="virtual3" style="left: 50%; transform: translateX(-50%);"></div>
+    <div class="personaggio" id="virtual4" style="left: 50%; transform: translateX(-50%);"></div>
+    <div class="personaggio" id="pink1" style="left: 75%; transform: translateX(-75%);"></div>
+    <div class="personaggio" id="pink2" style="left: 75%; transform: translateX(-75%);"></div>
+    <div class="personaggio" id="pink3" style="left: 75%; transform: translateX(-75%);"></div>
+    <div class="personaggio" id="pink4" style="left: 75%; transform: translateX(-75%);"></div>
     <div class="timer" id="timer"></div>
     <script>
-        const frameWidth = 30; // Larghezza di un singolo frame
+        const frameWidth = 30;
         const totalFrames = 10;
         function animateCharacter(character) {
             character.currentFrame = (character.currentFrame + 1) % totalFrames;
@@ -127,38 +106,35 @@
         function startJump(character) {
             character.isJumping = true;
             character.jumpFrames = 0;
-            character.jumpHeight = 60; // Altezza del salto impostata al doppio dell'altezza del personaggio
-            character.element.style.backgroundImage = `url('pg/${character.skin}/jump.png')`; // Cambia l'immagine per il salto
+            character.jumpHeight = 60;
+            character.element.style.backgroundImage = `url('pg/${character.skin}/jump.png')`;
         }
         function jump(character) {
-            if (character.jumpFrames < 15) { // Frame per la fase iniziale del salto
+            if (character.jumpFrames < 15) {
                 character.jumpFrames++;
-                character.posY += 2; // Simula il movimento verso l'alto
+                character.posY += 2;
                 character.element.style.bottom = character.posY + 'px';
-            } else if (character.jumpFrames < 30) { // Frame per la fase in aria del salto
+            } else if (character.jumpFrames < 30) {
                 character.jumpFrames++;
-                // Cambia l'immagine per il salto in aria
                 character.element.style.backgroundImage = `url('pg/${character.skin}/air.png')`;
-            } else { // Frame per la fase di caduta del salto
+            } else {
                 character.jumpFrames++;
-                character.posY -= 2; // Simula il movimento verso il basso
+                character.posY -= 2;
                 character.element.style.bottom = character.posY + 'px';
-                // Cambia l'immagine per la caduta
                 character.element.style.backgroundImage = `url('pg/${character.skin}/fall.png')`;
-                if (character.jumpFrames >= 45) { // Dopo 45 frame, torna a terra
+                if (character.jumpFrames >= 45) {
                     character.isJumping = false;
                     character.jumpFrames = 0;
                     character.posY = 0;
                     character.element.style.bottom = '0';
-                    // Cambia l'immagine per la camminata
                     character.element.style.backgroundImage = `url('pg/${character.skin}/run.png')`;
                 }
             }
         }
         function hit(character) {
-            character.element.style.backgroundImage = `url('pg/${character.skin}/hit.png')`; // Cambia l'immagine per l'hit
+            character.element.style.backgroundImage = `url('pg/${character.skin}/hit.png')`;
             setTimeout(() => {
-                character.element.style.backgroundImage = `url('pg/${character.skin}/run.png')`; // Torna all'immagine di camminata dopo un certo tempo
+                character.element.style.backgroundImage = `url('pg/${character.skin}/run.png')`;
             }, 500);
         }
         const characters = [
@@ -389,14 +365,20 @@
         ];
         characters.forEach((character) => {
             animateCharacter(character);
-            character.element.querySelector('.nickname').textContent = character.nickname;
+            const nicknameElement = document.createElement('div');
+            nicknameElement.className = 'nickname';
+            nicknameElement.textContent = character.nickname;
+            character.element.appendChild(nicknameElement);
         });
         function updateTimer() {
             const timerElement = document.getElementById('timer');
-            const startDate = new Date();
-            startDate.setDate(startDate.getDate() - 4);
+            let startDate = localStorage.getItem('startDate');
+            if (!startDate) {
+                startDate = new Date().getTime();
+                localStorage.setItem('startDate', startDate);
+            }
             setInterval(() => {
-                const currentDate = new Date();
+                const currentDate = new Date().getTime();
                 const timeDiff = currentDate - startDate;
                 const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
