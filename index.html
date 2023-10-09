@@ -58,18 +58,22 @@
     <div class="personaggio" id="mask2" style="left: 0;"></div>
     <div class="personaggio" id="mask3" style="left: 0;"></div>
     <div class="personaggio" id="mask4" style="left: 0;"></div>
+    <div class="personaggio" id="mask5" style="left: 0;"></div>
     <div class="personaggio" id="frog1" style="left: 100%; transform: scaleX(-1);"></div>
     <div class="personaggio" id="frog2" style="left: 100%; transform: scaleX(-1);"></div>
     <div class="personaggio" id="frog3" style="left: 100%; transform: scaleX(-1);"></div>
     <div class="personaggio" id="frog4" style="left: 100%; transform: scaleX(-1);"></div>
+     <div class="personaggio" id="frog5" style="left: 100%; transform: scaleX(-1);"></div>
     <div class="personaggio" id="virtual1" style="left: 50%; transform: translateX(-50%);"></div>
     <div class="personaggio" id="virtual2" style="left: 50%; transform: translateX(-50%);"></div>
     <div class="personaggio" id="virtual3" style="left: 50%; transform: translateX(-50%);"></div>
     <div class="personaggio" id="virtual4" style="left: 50%; transform: translateX(-50%);"></div>
+    <div class="personaggio" id="virtual5" style="left: 50%; transform: translateX(-50%);"></div>
     <div class="personaggio" id="pink1" style="left: 75%; transform: translateX(-75%);"></div>
     <div class="personaggio" id="pink2" style="left: 75%; transform: translateX(-75%);"></div>
     <div class="personaggio" id="pink3" style="left: 75%; transform: translateX(-75%);"></div>
     <div class="personaggio" id="pink4" style="left: 75%; transform: translateX(-75%);"></div>
+    <div class="personaggio" id="pink5" style="left: 75%; transform: translateX(-75%);"></div>
     <div class="timer" id="timer"></div>
     <script>
         const frameWidth = 30;
@@ -197,6 +201,20 @@
                 skin: 'mask',
                 nickname: 'Salvatore Pannozzo Capodiferro'
             },
+          {
+                element: document.getElementById('mask5'),
+                currentFrame: 0,
+                posX: 0,
+                posY: 0,
+                speed: 1,
+                jumpChance: 0.001,
+                changeDirectionChance: 0.005,
+                direction: 1,
+                isJumping: false,
+                jumpFrames: 0,
+                skin: 'mask',
+                nickname: 'Timothy Franceschi'
+            },
             {
                 element: document.getElementById('frog1'),
                 currentFrame: 0,
@@ -254,6 +272,20 @@
                 nickname: 'Ekpu Chinwe'
             },
             {
+                element: document.getElementById('frog5'),
+                currentFrame: 0,
+                posX: window.innerWidth,
+                posY: 0,
+                speed: 1.5,
+                jumpChance: 0.002,
+                changeDirectionChance: 0.01,
+                direction: -1,
+                isJumping: false,
+                jumpFrames: 0,
+                skin: 'frog',
+                nickname: 'Paolo Russo'
+            },
+            {
                 element: document.getElementById('virtual1'),
                 currentFrame: 0,
                 posX: window.innerWidth / 2,
@@ -308,6 +340,20 @@
                 jumpFrames: 0,
                 skin: 'virtual',
                 nickname: 'Nicola Bongiovanni'
+            },
+                        {
+                element: document.getElementById('virtual5'),
+                currentFrame: 0,
+                posX: window.innerWidth / 2,
+                posY: 0,
+                speed: 1.2,
+                jumpChance: 0.005,
+                changeDirectionChance: 0.01,
+                direction: 1,
+                isJumping: false,
+                jumpFrames: 0,
+                skin: 'virtual',
+                nickname: 'Adrian Elvis Iale'
             },
             {
                 element: document.getElementById('pink1'),
@@ -364,6 +410,20 @@
                 jumpFrames: 0,
                 skin: 'pink',
                 nickname: 'Anastasia Design'
+            },
+                        {
+                element: document.getElementById('pink5'),
+                currentFrame: 0,
+                posX: window.innerWidth * 0.75,
+                posY: 0,
+                speed: 1.3,
+                jumpChance: 0.002,
+                changeDirectionChance: 0.01,
+                direction: -1,
+                isJumping: false,
+                jumpFrames: 0,
+                skin: 'pink',
+                nickname: 'Claudia Troiani'
             },
         ];
         characters.forEach((character) => {
